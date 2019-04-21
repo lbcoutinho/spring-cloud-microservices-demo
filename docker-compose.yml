@@ -1,0 +1,14 @@
+version: '3.6'
+volumes:
+  service-discovery-logs:
+services:
+  service-descovery:
+    build:
+      context: ./service-discovery
+    container_name: service-discovery
+    restart: unless-stopped
+    ports:
+      - 8761:8761
+    volumes:
+      - service-discovery-logs:/logs
+    
