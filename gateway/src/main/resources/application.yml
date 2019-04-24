@@ -1,0 +1,22 @@
+spring:
+  application:
+    name: zuul-proxy
+
+server:
+  port: 8080
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: ${EUREKA_SERVER_URI:http://192.168.99.100:8761/eureka} # IP for Docker Toolbox
+  instance:
+    preferIpAddress: true
+
+zuul:
+  prefix: /api
+  ignored-services: *
+  routes:
+    product:
+      path: /product/**
+      serviceId: product-api
+      strip-prefix: false
