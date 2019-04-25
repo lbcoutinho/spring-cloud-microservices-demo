@@ -14,7 +14,7 @@ eureka:
 
 zuul:
   prefix: /api
-  ignored-services: *
+  ignored-services: '*'
   routes:
     product:
       path: /product/**

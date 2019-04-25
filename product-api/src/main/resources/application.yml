@@ -2,7 +2,7 @@ spring:
   application:
     name: product-api
 server:
-  port: 0 # Random port
+  port: 8090
 
 eureka:
   client:
